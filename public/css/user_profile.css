@@ -1,0 +1,69 @@
+
+
+#add-link{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin: 1rem 0.5rem;
+    gap: 5px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+#add-link:hover{
+    transition: 0.5s;
+    transform: translateX(5px);
+}
+
+.link-text{
+    font-size: 2.4rem;
+    color: white;
+    font-weight: 600;
+}
+#add-svg{
+    box-shadow: 0px 0px 2px white,0px 0px 2px white;
+    border-radius: 50%;
+}
+
+.todos{
+    padding: 1rem;
+}
+.todo-box{
+    background-color: rgb(186, 177, 177);
+    padding: 1rem;
+    border-radius: 0.4rem;
+}
+.title{
+    color: rgb(48, 47, 47);
+    margin: 0.5rem 0;
+}
+.body{
+    margin: 0.5rem 0 ;
+    font-size: 1.8rem;
+}
+
+.icons{
+    margin: 1rem 0;
+}
+.icons a {
+    margin-right: 1rem;
+}
+
+.server-message{
+    margin: 2rem 1rem;
+    font-size: 1.6rem;
+    color: white;
+    padding: 1rem;
+    border-radius: 0.4rem;
+}
+
+#error{
+    background-color: rgb(238, 57, 57);
+    box-shadow: 0px 0px 2px rgb(238, 57, 57) ;
+    
+}
+
+#success{
+    background-color: rgb(76, 195, 63);
+    box-shadow: 0px 0px 2px rgb(76, 195, 63) ;
+}

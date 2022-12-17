@@ -1,0 +1,31 @@
+.navbar{
+    background-color: rgb(81, 79, 119);
+}
+.nav-list{
+    display: flex;
+    list-style-type: none;
+}
+.nav-item{
+    flex: 1;
+    justify-self: end;
+}
+
+.nav-link{
+    display: inline-block;
+    font-size: clamp(2rem,2.4vw,2.4rem);
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    padding: 1.4rem 2rem;
+    opacity: 1;    
+    transition: 0.5s;
+}
+.nav-link:hover{
+    transition: 0.5s;
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+.nav-item:nth-child(2){
+    text-align: end;
+}
