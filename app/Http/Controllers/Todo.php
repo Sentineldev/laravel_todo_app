@@ -49,7 +49,15 @@ class Todo extends Controller
     */
     
     public function update_todo_view($todo_id){
+
+
+        
         $todo = TodoModel::where("id",$todo_id)->get()->first();
+
+        if($todo == null){
+            return redirect()->route("usr_profile")->with("error","Todo doesn't exists.");
+        }
+
         $user =  UserModel::select("name")->where("id",session('user_id'))->get()->first();
         return view("todo/update_todo",["todo" => $todo,"user" => $user]);
 

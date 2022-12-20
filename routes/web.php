@@ -47,26 +47,28 @@ Route::middleware(['alreadyLoggedIn'])->group(function(){
 
 Route::middleware(['loginRequired'])->group(function(){
 
-    Route::get("/user_profile",[User::class,"userIndex"])->name("usr_profile");
 
-    
-    
-    Route::get("/create_todo",[Todo::class,'create_todo_view'])->name("create_todo");
-    Route::post("/create_todo",[Todo::class,"create_todo"])->name("create_todo");
+        Route::prefix("user")->group(function(){
+            Route::get("/profile",[User::class,"userIndex"])->name("usr_profile");
 
-    Route::get("/update_todo/{todo_id}",[Todo::class,"update_todo_view"])->name("update_todo");
-    Route::post("/update_todo/{todo_id}",[Todo::class,"update_todo"])->name("update_todo");
+            Route::get("/create_todo",[Todo::class,'create_todo_view'])->name("create_todo");
+            Route::post("/create_todo",[Todo::class,"create_todo"])->name("create_todo");
 
-    Route::get("/delete_todo/{todo_id}",[Todo::class,"delete_Todo"])->name("delete_todo");
+            Route::get("/update_todo/{todo_id}",[Todo::class,"update_todo_view"])->name("update_todo");
+            Route::post("/update_todo/{todo_id}",[Todo::class,"update_todo"])->name("update_todo");
+
+            Route::get("/delete_todo/{todo_id}",[Todo::class,"delete_Todo"])->name("delete_todo");
 
 
-    Route::get("/logout",function(Request $request){
+            Route::get("/logout",function(Request $request){
 
-        //Erase all the data from the current session and sends the user to the login screen.dw
-        $request->session()->flush();
-        return redirect()->route("usr_login");
-    })
-    ->name("logout");
+                //Erase all the data from the current session and sends the user to the login screen.dw
+                $request->session()->flush();
+                return redirect()->route("usr_login");
+            })
+            ->name("logout");
+        });
+        
 
 });
 
